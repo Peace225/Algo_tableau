@@ -1,0 +1,67 @@
+ALGORITHM Addition
+VAR
+    tab_ensemble1 : tableau ENTIER [4];
+    tab_ensemble2 : tableau ENTIER [5];
+    i: ENTIER;
+    somme : ENTIER;
+BEGIN
+    tab_ensemble1 <-[3, 1, 7, 9];
+    tab_ensemble2 <-[2, 4, 1, 9, 3];
+    somme <- 0;
+
+    POUR i de 0 à 3 FAIRE
+    SI tab_ensemble1 [i] n'est pas dans tab_ensemble2
+    ALORS somme <-somme + tab_ensemble1 [i]
+    FIN SI
+    FIN POUR
+
+    POUR i de 0 à 4 FAIRE 
+    SI tab_ensemble2 [i] n'est pas dans le tab_ensemble1
+    ALORS somme <- somme + tab_ensemble2 [i]
+    FIN SI
+    FIN POUR
+    AFFICHE somme;
+END
+
+
+ALGORITHM Produit Scalaire (v1, v2)
+//Calculer le produit scalaire de deux vecteurs
+
+ps = 0
+POUR i = 0 à longueur (v1) -1
+ ps = ps + v1[i] * v2[i]
+FIN POUR
+retourne ps
+Fin Algorithme
+
+Algorithme
+SontOrthogonaux(vecteurs)
+//Vérifier si n paires de vecteurs sont orthogonaux
+
+POUR i = 0 à longueur(vecteurs) -2
+POUR j = i+1 à longueur(vecteurs) -1
+    ps = DotProduct(vecteurs [i], vecteurs [i])
+si ps = 0 ALORS
+    AFFICHE "Les vecteurs", i "et", j "sont orthogonaux"
+SINON
+    AFFICHE "Les vecteurs", i "et", j "ne sont pas orthogonaux"
+FIN SI 
+FIN POUR
+FIN Algorithme
+VAR
+    //Declarer les variables de vecteur
+    vecteur1 : tableau_de_reel[3];
+    vecteur2 : tableau_de_reel[3];
+    vecteur3 : tableau_de_reel[3];
+    vecteur : tableau_tableau_de_reel[3];
+
+BEGIN
+    //initialiser les vecteurs
+    vecteur1 =[1.0, 0.0, 0.0];
+    vecteur2 =[0.0, 1.0, 0.0];
+    vecteur3 =[0.0, 0.0, 1.0];
+
+    vecteur = [vecteur1, vecteur2, vecteur3];
+    SontOrthogonaux(vecteur)
+END
+

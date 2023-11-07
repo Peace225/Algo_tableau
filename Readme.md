@@ -1,0 +1,1 @@
+ces cas pratique resoudre deux problemes distingues l'autre c'est pour un addition de deux tableaux entier (probleme1) et le second c'est tableau de vecteur
